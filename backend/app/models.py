@@ -6,5 +6,5 @@ class FitIn(BaseModel):
     bedroom: int
     bath: int
 
-class FitOut(FitIn):
+class FitOut(BaseModel):
     price: float

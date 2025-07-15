@@ -4,13 +4,17 @@ from pydantic_settings import BaseSettings
 class Settings(BaseSettings):
     model_path: str = r"C:\Users\PC\Documents\Bengaluru housing project\model\bengaluru_prediction_model.pkl"
     
-    def locations(self):
+    def columns(self):
         with open(r"C:\Users\PC\Documents\Bengaluru housing project\columns.json") as f:
-            locations = json.load(f)['columns_names']
-            valid_locations = locations[:-3]
+            columns = json.load(f)['columns_names']
+            return columns
+
+    def locations(self):
+        locations = self.columns()
+        valid_locations = [location[9:] for location in locations[:-3]]
         return valid_locations
 
-    class Config:
+    class Config:   
         env_file = ".env"
 
 settings = Settings()

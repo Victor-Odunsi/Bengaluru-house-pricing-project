@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bengaluru House Price Predictor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>House Price Prediction</h1>
+        <form id="predictionForm">
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <select id="location" required>
+                    <option value="">Select Area</option>
+                    <option value="Whitefield">Whitefield</option>
+                    <option value="Electronic City">Electronic City</option>
+                    <option value="Marathahalli">Marathahalli</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="total_sqft">Total Sq.Ft:</label>
+                <input type="number" id="total_sqft" required>
+            </div>
+
+            <div class="form-group">
+                <label for="bath">Bathrooms:</label>
+                <input type="number" id="bath" min="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="bedroom">Bedrooms:</label>
+                <input type="number" id="bedroom" min="1" required>
+            </div>
+
+            <button type="submit">Predict Price</button>
+        </form>
+
+        <div class="result-box hidden" id="result">
+            <h3>Predicted House Price:</h3>
+            <div class="price-display" id="price"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
