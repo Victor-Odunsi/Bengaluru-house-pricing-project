@@ -9,7 +9,7 @@ document.getElementById('predictionForm').addEventListener('submit', async (e) =
     };
 
     try {
-        const response = await fetch('http://localhost:8000/predict_house_price', {
+        const response = await fetch('http://localhost:8008/predict_house_price', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(payload)
@@ -28,7 +28,7 @@ document.getElementById('predictionForm').addEventListener('submit', async (e) =
 // Fetch locations from backend API
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        const response = await fetch('http://localhost:8000/get_locations');
+        const response = await fetch('http://localhost:8008/get_locations');
         const locations = await response.json();
         const locationSelect = document.getElementById('location');
         
